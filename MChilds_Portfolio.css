@@ -1,0 +1,228 @@
+/* ===========================
+    MY PORTFOLIO PROJECT
+    By: MICHELLE CHILDS
+   ===========================*/
+body {
+    margin: 0%;
+}
+
+.navbar {
+    overflow: hidden;
+    background: lightgrey;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: darkblue;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: cursive, Avant Grande, Helvetica;
+    font-size: 20px;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background: #f4f4f4;
+    color: darkblue;
+    font-weight: bold;
+}
+
+.navbar a.active {
+    background: darkgrey;
+}
+
+#Coding_Video {
+    position: fixed;
+    margin-left: auto;
+    margin-left: auto;
+    top: 0;
+    /*padding-top: 5%;
+    left: 0;
+    transform-origin: (-25% 0%);  
+    
+    right: 0;
+    bottom: 0;
+    object-fit: cover; 
+    width: 100%;*/
+    height: auto;    
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    background: rgba(30, 144, 255, 0.2);
+    width: 100%;
+    height: 35%;
+    margin-top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+span {
+    font-family: cursive;
+    text-align: center;
+    letter-spacing: 1.5px;
+    font-size: 24px;
+    padding-left: 20px;
+    padding-right:20px;
+    color: white;
+}
+
+*   { /*asterick is universal selector, applies effects to all elements on page*/
+    box-sizing: border-box;
+}
+
+.column_1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3%;
+    height: 400px;
+    background: #f2f2f2;
+}
+
+.column_2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 1.9%;
+    height: 400px;
+    background:  #4d4d4d;
+}
+
+.column_3 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3.5%;
+    height: 450px;
+    background: #4d4d4d;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-family: Optima;
+    text-align: center;
+    margin-top: 3%;
+    color: #1a1a1a;
+}
+
+p   {
+    font-family: cursive;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right:20px;
+}
+
+center {
+    font-family: cursive;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+a   {
+    color: blue;
+}
+
+q   {
+    color: white;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+img {
+    filter: grayscale(75%);
+    border-radius: 8px;
+    max-width: 100%;
+    height: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    resize: vertical;
+    font-family: cursive;
+}
+
+input[type=submit] {
+    background: black;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: cursive;
+}
+
+input[type=submit]:hover {
+    background: white;
+    color: black;
+    font-weight: bold;
+    transform: scale(1.5);
+    transition: transform 1.5s;
+}
+
+form {
+    border-radius: 5px;
+    background: #f2f2f2;
+    padding: 20px;
+    font-family: Optima;
+}
+
+center:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+
+p:hover {
+    color: #00004d;
+    transition: transform 1s;
+    transform: scale(1.01);
+}
+
+h1:hover {
+    color: black;
+    font-weight: normal;
+}
+
+img:hover {
+    filter: grayscale(5%);
+    transition: transform 1s;
+    transform: scale(1.1);
+}
+
+footer {
+    padding: 2%;
+    background: white;
+}
