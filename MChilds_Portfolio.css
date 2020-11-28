@@ -2,8 +2,23 @@
     MY PORTFOLIO PROJECT
     By: MICHELLE CHILDS
    ===========================*/
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0%;
+    opacity: 1;
+    transition: 3s opacity;
+    letter-spacing: .2vw;
+    font-family: cursive;
+    font-size: 1.5vw;
+}
+
+/* This section contributes to the fade effect for the page that occurs when the page is loaded */
+body.fade-out {
+    opacity: .1; 
+    transition: none;
 }
 
 .navbar {
@@ -12,7 +27,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
 }
 
 .navbar a {
@@ -36,33 +51,39 @@ body {
     background: darkgrey;
 }
 
+/* ===========================
+    BACKGROUND VIDEO SECTION
+   ===========================*/
 #Coding_Video {
     position: fixed;
-    margin-left: auto;
-    margin-left: auto;
-    top: 0;
-    /*padding-top: 5%;
-    left: 0;
-    transform-origin: (-25% 0%);  
-    
-    right: 0;
+    right: 0px;
     bottom: 0;
-    object-fit: cover; 
-    width: 100%;*/
-    height: auto;    
+    min-height: 100%;
+    top: 0;
     z-index: -1;
+    animation: zoominoutsinglefeatured 5s;
 }
 
-.container {
-    display: flex;
+@keyframes zoominoutsinglefeatured {
+    0% { transform: scale(1.5,1.5); }
+    100% { transform: scale(1,1); }
+}
+
+/* and text on video background ; */
+.Video_Text {
     background: rgba(30, 144, 255, 0.2);
     width: 100%;
-    height: 35%;
-    margin-top: 30%;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    justify-content: center;
+    padding-top: .1vh;
+    padding-bottom: 1vh;
+    margin-top: 23%;
+    position: relative;
+    -webkit-animation: moveNav 4s;
+    animation: movevideoText 4s;
+}
+
+@keyframes movevideoText {
+    from {top: -100vw;}
+    to {top: 0px;}
 }
 
 span {
@@ -75,35 +96,142 @@ span {
     color: white;
 }
 
+/* ===========================
+    SLIDESHOW SECTION
+   =========================== */
+
 *   { /*asterick is universal selector, applies effects to all elements on page*/
     box-sizing: border-box;
 }
 
+#Slideshow_Background {
+    background: rgba(255,255,255, .25);
+}
+
+@-webkit-keyframes fade {
+    from { opacity: .4 }
+    to { opacity: 1 }
+}
+
+@keyframes fade {
+    from { opacity: .4 }
+    to { opacity: 1 }
+}
+
+#Slideshow_Container {
+    width: 39.5vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+}
+
+.Slide_Show_Images {
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 5px 10px 12px rgba(0,0,0, .75);
+    width: auto;
+}
+
+.Slideshow_Container img {
+    filter: grayscale(95%);
+    border-radius: 8px;
+    max-width: 100%;
+    display: block;
+    margin: auto auto auto auto;
+}
+
+.Previous, .Next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    color: darkblue;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+
+.Next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.Previous:hover, .Next:hover {
+    background: rgba(0,0,0, .8);
+    color: white;
+}
+
+.text {
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    background: rgba(0,0,0, .75);
+    font-weight: bold;
+    border-radius: 7px 7px 7px 7px;
+}
+
+.Slide_Number {
+    color: white;
+    position: absolute;
+    top: 0;
+    font-family: Perputua;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    display: none;
+}
+
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.active, .dot:hover {
+    background: black;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+/* ===========================
+    ABOUT & GITHUB SECTIONS
+   ===========================*/   
 .column_1 {
     float: left;
     width: 50%;
-    padding: 10px;
-    padding-top: 3%;
-    height: 400px;
+    padding: 1.6%;
+    height: 448px;
     background: #f2f2f2;
 }
 
 .column_2 {
     float: left;
     width: 50%;
-    padding: 10px;
-    padding-top: 1.9%;
-    height: 400px;
+    padding-top: 1.6%; 
+    padding-bottom: 1.6%; 
+    padding-left: 1.6%;
+    height: 448px;
     background:  #4d4d4d;
-}
-
-.column_3 {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    padding-top: 3.5%;
-    height: 450px;
-    background: #4d4d4d;
 }
 
 .row:after {
@@ -112,7 +240,7 @@ span {
     clear: both;
 }
 
-h1 {
+h1, h2{
     text-transform: uppercase;
     font-family: Optima;
     text-align: center;
@@ -123,19 +251,19 @@ h1 {
 p   {
     font-family: cursive;
     text-align: justify;
-    letter-spacing: 1px;
-    font-size: 18px;
-    padding-left: 20px;
-    padding-right:20px;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 center {
     font-family: cursive;
     text-align: center;
-    letter-spacing: 1px;
-    font-size: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 a   {
@@ -149,55 +277,14 @@ q   {
     font-weight: bold;
 }
 
-img {
+.row img {
     filter: grayscale(75%);
     border-radius: 8px;
     max-width: 100%;
-    height: 340px;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
     display: block;
-}
-
-input[type=text] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 12px;
-    resize: vertical;
-    font-family: cursive;
-}
-
-input[type=submit] {
-    background: black;
-    color: white;
-    font-weight: bold;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: cursive;
-}
-
-input[type=submit]:hover {
-    background: white;
-    color: black;
-    font-weight: bold;
-    transform: scale(1.5);
-    transition: transform 1.5s;
-}
-
-form {
-    border-radius: 5px;
-    background: #f2f2f2;
-    padding: 20px;
-    font-family: Optima;
 }
 
 center:hover {
@@ -222,6 +309,86 @@ img:hover {
     transform: scale(1.1);
 }
 
+/* ===========================
+    CONTACT FORM SECTION
+   ===========================*/
+.popup_button {
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 20vw;
+    background: lightblue;
+    color: darkblue;
+    border: solid;
+    cursor: pointer;
+    position: fixed;
+    animation: movePopup 5s;
+}
+
+@keyframes movePopup {
+    from { right: -40vw; }
+    to { bottom: 1.75vw; }
+}
+
+.form-popup {
+    border: 3px solid #f0f0f0;
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: 6px;
+    right: 6px;
+}
+
+.form-container {
+    max-width: 49vw;
+    padding: 2vw;
+    background: white;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: .93vw;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: .6vw 0 .6vw 0;
+    
+    font-family: cursive;
+    font-size: 1vw;
+}
+
+button {
+    font-family: Helvetica;
+    letter-spacing: .3vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1vw 1vw;
+    border-style: solid;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+}
+
+.form-container .btnS {
+    background: lightblue;
+    color: darkblue;
+    border-color: gray;
+}
+.form-container .btnC {
+    background: darkred;
+    color: white;
+    border-color: gray;
+}
+
+.form-container .btnS:hover, 
+.form-container .btnC:hover,
+.popup_button:hover {
+    box-shadow: inset 5px 5px 15px rgba(0,0,0, .5), inset -5px -5px 15px rgba(0,0,0, .5);
+    transition-duration: .5s;
+}
+
+/* ===========================
+    FOOTER SECTION
+   ===========================*/
 footer {
     padding: 2%;
     background: white;
