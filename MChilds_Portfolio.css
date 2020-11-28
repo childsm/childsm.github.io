@@ -180,6 +180,10 @@ span {
     border-radius: 7px 7px 7px 7px;
 }
 
+.mySlides a {
+    cursor: pointer;
+}
+
 .Slide_Number {
     color: white;
     position: absolute;
